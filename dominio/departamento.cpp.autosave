@@ -1,0 +1,26 @@
+#include "Departamento.h"
+
+departamento::departamento(QObject *parent) : QObject(parent)
+{
+
+}
+
+long long departamento::getIddepartamento() const
+{
+    return iddepartamento;
+}
+
+void departamento::setIddepartamento(long long value)
+{
+    iddepartamento = value;
+}
+
+QString departamento::getDescricao() const
+{
+    return descricao;
+}
+
+void departamento::setDescricao(const QString &value)
+{
+    descricao = value;
+}

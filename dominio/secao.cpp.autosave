@@ -1,0 +1,37 @@
+#include "secao.h"
+#include "Departamento.h"
+
+secao::secao(QObject *parent) : QObject(parent)
+{
+
+}
+
+long long secao::getIdsecao() const
+{
+    return idsecao;
+}
+
+void secao::setIdsecao(long long value)
+{
+    idsecao = value;
+}
+
+QString secao::getDescricao() const
+{
+    return descricao;
+}
+
+void secao::setDescricao(const QString &value)
+{
+    descricao = value;
+}
+
+//departamento *secao::getDepartamento() const
+//{
+//    return departamento;
+//}
+
+//void secao::setDepartamento(departamento *value)
+//{
+//    departamento = value;
+//}

@@ -1,0 +1,28 @@
+#ifndef PRODUTO_H
+#define PRODUTO_H
+
+#include <QObject>
+#include "dominio/Categoria.h"
+
+class produto : public QObject
+{
+    Q_OBJECT
+public:
+    explicit produto(QObject * parent = nullptr);
+
+    long long getIdProduto() const;
+    void setIdProduto(long long value);
+
+    QString getDescricao() const;
+    void setDescricao(const QString &value);
+
+    categoria *getCategoria() const;
+    void setCategoria(categoria *value);
+
+private:
+    long long idProduto;
+    QString descricao;
+    categoria* categoria = nullptr;
+};
+
+#endif // PRODUTO_H

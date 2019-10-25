@@ -1,0 +1,39 @@
+#include "produto.h"
+#include "Categoria.h"
+
+produto::produto(QObject *parent) : QObject(parent)
+{
+
+}
+
+
+long long produto::getIdProduto() const
+{
+    return idProduto;
+}
+
+void produto::setIdProduto(long long value)
+{
+    idProduto = value;
+}
+
+QString produto::getDescricao() const
+{
+    return descricao;
+}
+
+void produto::setDescricao(const QString &value)
+{
+    descricao = value;
+}
+
+categoria *produto::getCategoria() const
+{
+    return categoria;
+}
+
+void produto::setCategoria(categoria *value)
+{
+    categoria = value;
+}
+
