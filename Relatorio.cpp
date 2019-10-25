@@ -19,7 +19,7 @@ Relatorio::Relatorio(QWidget *parent) :
 {
     ui->setupUi(this);
     configuracoesInicais();
-
+    bancoddados();
 
 }
 

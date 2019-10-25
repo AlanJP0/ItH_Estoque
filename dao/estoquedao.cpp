@@ -13,13 +13,23 @@ EstoqueDAO::EstoqueDAO(QObject *parent) : QObject(parent)
 QList<Estoque *> EstoqueDAO::recuperaListEstoque(long long idFilial)
 {
     qDebug()<< idFilial;
-//    QString sql = " select produto.id_produto, descricao_produto, filial.id_filial, descricao_filial, produto.id_categoria, descricao_categoria, base from estoque "
-//                  " inner join filial on filial.id_filial = estoque.id_filial "
-//                  " inner join produto on produto.id_produto = estoque.id_produto "
-//                  " inner join categoria on categoria.id_categoria = produto.id_categoria ";
-//                  /*" where filial.id_filial = " + QString::number(idFilial);*/
+    QString sql =  " select estoque.testeestoque.produto.id_produto,"
+                   " estoque.testeestoque.produto.descricao_produto,"
+                   " estoque.testeestoque.filial.id_filial,"
+                   " estoque.testeestoque.filial.descricao_filial,"
+                   " estoque.testeestoque.produto.id_categoria,"
+                   " estoque.testeestoque.categoria.descricao_categoria,"
+                   " estoque.testeestoque.estoque.base"
+                   " from estoque.testeestoque.estoque"
+                   " inner join estoque.testeestoque.filial"
+                   " on estoque.testeestoque.filial.id_filial = estoque.testeestoque.estoque.id_filial"
+                   " inner join estoque.testeestoque.produto"
+                   " on estoque.testeestoque.produto.id_produto = estoque.testeestoque.estoque.id_produto"
+                   " inner join estoque.testeestoque.categoria"
+                   " on estoque.testeestoque.categoria.id_categoria = estoque.testeestoque.produto.id_categoria"
+                   " where estoque.testeestoque.filial.id_filial = " + QString::number(idFilial);
 
-    QString sql = "select * from filial";
+//    QString sql = "select * from estoque.testeestoque.filial";
 
     QSqlQuery query;
     query.prepare(sql);

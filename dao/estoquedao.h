@@ -15,7 +15,7 @@ public:
     QList<Estoque*> recuperaListEstoque(long long idFilial);
 
 private:
-    bancoddados _db;
+//    bancoddados _db;
 };
 
 #endif // ESTOQUEDAO_H
