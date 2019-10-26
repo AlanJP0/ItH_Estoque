@@ -7,42 +7,42 @@ CadastroBaseNegocio::CadastroBaseNegocio(QObject *parent) : QObject(parent)
 
 }
 
-QList<Categoria*> CadastroBaseNegocio::buscarIdCategorai(int idBusca)
+QList<Categoria*> CadastroBaseNegocio::buscarListCategoria()
 {
     CadastroBaseDao cadastrobase;
-    QList<Categoria*> categoria = cadastrobase.buscarIdCategoria(idBusca);
+    QList<Categoria*> categoria = cadastrobase.buscarListCategoria();
 
     return categoria;
 }
 
-Departamento *CadastroBaseNegocio::buscarIdDepartametno(int idBusca)
+QList<Departamento*> CadastroBaseNegocio::buscarListDepartamento()
 {
     CadastroBaseDao cadastrobase;
-    Departamento* departamento = cadastrobase.buscarIdDepartameto(idBusca);
+    QList<Departamento*> departamento = cadastrobase.buscarListDepartamento();
 
     return departamento;
 }
 
-Filial *CadastroBaseNegocio::buscarIdFilial(int idBusca)
+QList<Filial*> CadastroBaseNegocio::buscarListFilial()
 {
     CadastroBaseDao cadastrobase;
-    Filial* filial = cadastrobase.buscarIdFilial(idBusca);
+    QList<Filial*> filial = cadastrobase.buscarListFilial();
 
     return filial;
 }
 
-Produto *CadastroBaseNegocio::buscarIdProduto(int idBusca)
+QList<Produto*> CadastroBaseNegocio::buscarListProduto()
 {
     CadastroBaseDao cadastrobase;
-    Produto* produto = cadastrobase.buscarIdProduto(idBusca);
+    QList<Produto*> produto = cadastrobase.buscarListProduto();
 
     return produto;
 }
 
-Secao *CadastroBaseNegocio::buscarIdSecao(int idBusca)
+QList<Secao*> CadastroBaseNegocio::buscarListSecao()
 {
     CadastroBaseDao cadastrobase;
-    Secao* secao = cadastrobase.buscarIdSecao(idBusca);
+    QList<Secao*> secao = cadastrobase.buscarListSecao();
 
     return secao;
 }

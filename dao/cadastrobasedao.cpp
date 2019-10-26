@@ -7,13 +7,15 @@ CadastroBaseDao::CadastroBaseDao(QObject *parent) : QObject(parent)
 
 }
 
-QList<Categoria*> CadastroBaseDao::buscarIdCategoria(int idBusca)
+QList<Categoria*> CadastroBaseDao::buscarListCategoria()
 {
-    QString sql = " select id_categoria, descricao_categoria from categoria where id_categoria = " + QString::number(idBusca);
+    QString sql = " select id_categoria, descricao_categoria from categoria ";
 
     QSqlQuery query;
     query.prepare(sql);
+
     QList<Categoria*> listcategoria;
+
     while(query.exec()){
 
         Categoria * categoria = new Categoria;
@@ -26,74 +28,89 @@ QList<Categoria*> CadastroBaseDao::buscarIdCategoria(int idBusca)
     return listcategoria;
 }
 
-Departamento* CadastroBaseDao::buscarIdDepartameto(int idBusca)
+QList<Departamento*> CadastroBaseDao::buscarListDepartamento()
 {
-    QString sql = " select id_departamento, descrica_departamento from departamento where id_departamento =" + QString::number(idBusca);
+    QString sql = " select id_departamento, descrica_departamento from departamento" ;
 
     QSqlQuery query;
     query.prepare(sql);
 
-    if(!query.exec()){
-        qDebug() << "query nao executada" << query.lastError();
+    QList<Departamento*> listdepartamento;
+
+    while(query.exec()){
+
+        Departamento* departamento = new Departamento;
+        departamento->setIdDepartamento(query.value("id_departamento").toLongLong());
+        departamento->setDescricao(query.value("descricao_departamento").toString());
+
+        listdepartamento << departamento;
     }
 
-    Departamento* departamento = new Departamento;
-    departamento->setIdDepartamento(query.value("id_departamento").toLongLong());
-    departamento->setDescricao(query.value("descricao_departamento").toString());
-
-    return departamento;
+    return listdepartamento;
 }
 
-Filial *CadastroBaseDao::buscarIdFilial(int idBusca)
+QList<Filial*> CadastroBaseDao::buscarListFilial()
 {
-    QString sql = " select id_filial, descrica_filial from filial where id_filial =" + QString::number(idBusca);
+    QString sql = " select estoque.testeestoque.id_filial, estoque.testeestoque.descrica_filial from estoque.testeestoque.filial " ;
 
     QSqlQuery query;
     query.prepare(sql);
 
-    if(!query.exec()){
-        qDebug() << "query nao executada" << query.lastError();
+    QList<Filial*> listfilial;
+    while(query.exec()){
+
+        Filial* filial = new Filial;
+        filial->setIdFilial(query.value("id_filial").toLongLong());
+        filial->setDescricao(query.value("descricao_filial").toString());
+
+        listfilial << filial;
     }
 
-    Filial* filial = new Filial;
-    filial->setIdFilial(query.value("id_filial").toLongLong());
-    filial->setDescricao(query.value("descricao_filial").toString());
-
-    return filial;
+    return listfilial;
 }
 
-Produto *CadastroBaseDao::buscarIdProduto(int idBusca)
+QList<Produto*> CadastroBaseDao::buscarListProduto()
 {
-    QString sql = " select id_produto, descrica_produto from produto where id_produto =" + QString::number(idBusca);
+    QString sql = " select estoque.testeestoque.id_produto, estoque.testeestoque.descrica_produto from estoque.testeestoque.produto ";
 
     QSqlQuery query;
     query.prepare(sql);
 
-    if(!query.exec()){
-        qDebug() << "query nao executada" << query.lastError();
+    QList<Produto*> listproduto;
+
+    while(query.exec()){
+
+        Produto* produto = new Produto;
+        produto->setIdProduto(query.value("id_produto").toLongLong());
+        produto->setDescricao(query.value("descricao_produto").toString());
+
+        listproduto << produto;
     }
 
-    Produto* produto = new Produto;
-    produto->setIdProduto(query.value("id_produto").toLongLong());
-    produto->setDescricao(query.value("descricao_produto").toString());
 
-    return produto;
+
+    return listproduto;
 }
 
-Secao *CadastroBaseDao::buscarIdSecao(int idBusca)
+QList<Secao*> CadastroBaseDao::buscarListSecao()
 {
-    QString sql = " select id_secao, descrica_secao from secao where id_secao =" + QString::number(idBusca);
+    QString sql = " select estoque.testeestoque.id_secao, estoque.testeestoque.descrica_secao from secao ";
 
     QSqlQuery query;
     query.prepare(sql);
 
-    if(!query.exec()){
-        qDebug() << "query nao executada" << query.lastError();
+    QList<Secao*> listsecao;
+
+    while(query.exec()){
+
+        Secao* secao = new Secao;
+        secao->setIdSecao(query.value("id_secao").toLongLong());
+        secao->setDescricao(query.value("descricao_secao").toString());
+
+        listsecao << secao;
     }
 
-    Secao* secao = new Secao;
-    secao->setIdSecao(query.value("id_secao").toLongLong());
-    secao->setDescricao(query.value("descricao_secao").toString());
 
-    return secao;
+
+    return listsecao;
 }

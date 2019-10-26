@@ -16,7 +16,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    Relatorio.cpp \
+    visao/Relatorio.cpp \
     dao/cadastrobasedao.cpp \
     dao/estoquedao.cpp \
     dominio/Categoria.cpp \
@@ -26,15 +26,20 @@ SOURCES += \
     dominio/Produto.cpp \
     dominio/Secao.cpp \
     negocio/bancoddados.cpp \
-    cadastro.cpp \
+    visao/botaopesquisacategoria.cpp \
+    visao/botaopesquisadepartamento.cpp \
+    visao/botaopesquisafilial.cpp \
+    visao/botaopesquisaproduto.cpp \
+    visao/botaopesquisarsecao.cpp \
+    visao/cadastro.cpp \
     main.cpp \
-    mainwindow.cpp \
+    visao/mainwindow.cpp \
     negocio/cadastrobasenegocio.cpp \
     negocio/estoquenegocio.cpp
 
 HEADERS += \
-    Cadastro.h \
-    Relatorio.h \
+    visao/Cadastro.h \
+    visao/Relatorio.h \
     dao/cadastrobasedao.h \
     dao/estoquedao.h \
     dominio/Categoria.h \
@@ -44,14 +49,24 @@ HEADERS += \
     dominio/Produto.h \
     dominio/Secao.h \
     negocio/bancoddados.h \
-    mainwindow.h \
+    visao/botaopesquisacategoria.h \
+    visao/botaopesquisadepartamento.h \
+    visao/botaopesquisafilial.h \
+    visao/botaopesquisaproduto.h \
+    visao/botaopesquisarsecao.h \
+    visao/mainwindow.h \
     negocio/cadastrobasenegocio.h \
     negocio/estoquenegocio.h
 
 FORMS += \
-    cadastro.ui \
-    mainwindow.ui \
-    relatorio.ui
+    visao/botaopesquisacategoria.ui \
+    visao/botaopesquisadepartamento.ui \
+    visao/botaopesquisafilial.ui \
+    visao/botaopesquisaproduto.ui \
+    visao/botaopesquisarsecao.ui \
+    visao/cadastro.ui \
+    visao/mainwindow.ui \
+    visao/relatorio.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

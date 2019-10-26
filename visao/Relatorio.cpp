@@ -1,7 +1,6 @@
 #include "Relatorio.h"
 #include "ui_relatorio.h"
 #include "Cadastro.h"
-#include "Cadastrobase.h"
 #include "QTableWidget"
 #include "QTableWidgetItem"
 #include "qdebug.h"

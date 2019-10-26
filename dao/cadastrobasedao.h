@@ -17,12 +17,12 @@ class CadastroBaseDao : public QObject
 public:
     explicit CadastroBaseDao(QObject *parent = nullptr);
 
-    QList<Categoria*> buscarIdCategoria(int idBusca);
-    Departamento* buscarIdDepartameto(int idBusca);
+    QList<Categoria*> buscarListCategoria();
+    QList<Departamento*> buscarListDepartamento();
 //    QList<Estoque>
-    Filial* buscarIdFilial(int idBusca);
-    Produto* buscarIdProduto(int idBusca);
-    Secao* buscarIdSecao(int idBusca);
+    QList<Filial*> buscarListFilial();
+    QList<Produto*> buscarListProduto();
+    QList<Secao*> buscarListSecao();
 
 };
 
