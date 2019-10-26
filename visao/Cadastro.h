@@ -27,6 +27,7 @@ private:
     double dadoBase;
 
     void configuracaoInicial();
+    void setConnects();
 
 private slots:
     void clicouLePesquisarFilial();

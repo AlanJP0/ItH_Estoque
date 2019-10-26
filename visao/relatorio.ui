@@ -56,12 +56,17 @@
         <widget class="QTableWidget" name="tableWidget">
          <column>
           <property name="text">
-           <string>Categoria</string>
+           <string>Filial</string>
           </property>
          </column>
          <column>
           <property name="text">
            <string>Produto</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Categoria</string>
           </property>
          </column>
          <column>

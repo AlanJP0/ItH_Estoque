@@ -10,9 +10,9 @@ EstoqueDAO::EstoqueDAO(QObject *parent) : QObject(parent)
 
 }
 
-QList<Estoque *> EstoqueDAO::recuperaListEstoque(long long idFilial)
+QList<Estoque *> EstoqueDAO::recuperaListEstoque()
 {
-    qDebug()<< idFilial;
+
     QString sql =  " select estoque.testeestoque.produto.id_produto,"
                    " estoque.testeestoque.produto.descricao_produto,"
                    " estoque.testeestoque.filial.id_filial,"
@@ -26,10 +26,8 @@ QList<Estoque *> EstoqueDAO::recuperaListEstoque(long long idFilial)
                    " inner join estoque.testeestoque.produto"
                    " on estoque.testeestoque.produto.id_produto = estoque.testeestoque.estoque.id_produto"
                    " inner join estoque.testeestoque.categoria"
-                   " on estoque.testeestoque.categoria.id_categoria = estoque.testeestoque.produto.id_categoria"
-                   " where estoque.testeestoque.filial.id_filial = " + QString::number(idFilial);
+                   " on estoque.testeestoque.categoria.id_categoria = estoque.testeestoque.produto.id_categoria";
 
-//    QString sql = "select * from estoque.testeestoque.filial";
 
     QSqlQuery query;
     query.prepare(sql);

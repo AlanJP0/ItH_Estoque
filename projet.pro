@@ -30,7 +30,7 @@ SOURCES += \
     visao/botaopesquisadepartamento.cpp \
     visao/botaopesquisafilial.cpp \
     visao/botaopesquisaproduto.cpp \
-    visao/botaopesquisarsecao.cpp \
+    visao/botaopesquisasecao.cpp \
     visao/cadastro.cpp \
     main.cpp \
     visao/mainwindow.cpp \
@@ -53,7 +53,7 @@ HEADERS += \
     visao/botaopesquisadepartamento.h \
     visao/botaopesquisafilial.h \
     visao/botaopesquisaproduto.h \
-    visao/botaopesquisarsecao.h \
+    visao/botaopesquisasecao.h \
     visao/mainwindow.h \
     negocio/cadastrobasenegocio.h \
     negocio/estoquenegocio.h
@@ -63,7 +63,7 @@ FORMS += \
     visao/botaopesquisadepartamento.ui \
     visao/botaopesquisafilial.ui \
     visao/botaopesquisaproduto.ui \
-    visao/botaopesquisarsecao.ui \
+    visao/botaopesquisasecao.ui \
     visao/cadastro.ui \
     visao/mainwindow.ui \
     visao/relatorio.ui

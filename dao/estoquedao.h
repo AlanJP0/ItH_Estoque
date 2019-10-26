@@ -12,7 +12,7 @@ class EstoqueDAO : public QObject
 public:
     explicit EstoqueDAO(QObject *parent = nullptr);
 
-    QList<Estoque*> recuperaListEstoque(long long idFilial);
+    QList<Estoque*> recuperaListEstoque();
 
 private:
 //    bancoddados _db;

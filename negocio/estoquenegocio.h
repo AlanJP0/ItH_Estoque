@@ -10,7 +10,7 @@ class EstoqueNegocio : public QObject
 public:
     explicit EstoqueNegocio(QObject *parent = nullptr);
 
-    QList<Estoque*> recuperaListEstoque(long long idFilial);
+    QList<Estoque*> recuperaListEstoque();
 
 };
 

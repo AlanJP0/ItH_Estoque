@@ -4,7 +4,6 @@
 #include "QTableWidget"
 #include "QTableWidgetItem"
 #include "qdebug.h"
-#include "negocio/cadastrodebasenegocio.h"
 #include "negocio/bancoddados.h"
 #include <QtSql>
 #include "negocio/estoquenegocio.h"
@@ -32,7 +31,7 @@ void Relatorio::montarTw()
 {
 qDebug() << "Chegou no montarTW";
     EstoqueNegocio estoqueNegocio;
-    QList<Estoque*> listEstoque = estoqueNegocio.recuperaListEstoque(1);
+    QList<Estoque*> listEstoque = estoqueNegocio.recuperaListEstoque();
 
     int linha = 0;
     foreach (Estoque* estoque, listEstoque) {
@@ -46,10 +45,13 @@ qDebug() << "Chegou no montarTW";
         item1->setText(estoque->getProduto()->getDescricao());
         ui->tableWidget->setItem(linha, 1, item1);
 
-
         QTableWidgetItem* item2 = new QTableWidgetItem;
         item2->setText(estoque->getProduto()->getCategoria()->getDescricao());
         ui->tableWidget->setItem(linha, 2, item2);
+
+        QTableWidgetItem* item3 = new QTableWidgetItem;
+        item3->setText(QString::number(estoque->getBase()));
+        ui->tableWidget->setItem(linha,3, item3);
 
 
         linha++;

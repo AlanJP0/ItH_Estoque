@@ -1,6 +1,10 @@
 #include "Cadastro.h"
 #include "ui_cadastro.h"
 #include "qdebug.h"
+#include "botaopesquisacategoria.h"
+#include "botaopesquisaproduto.h"
+#include "botaopesquisafilial.h"
+#include "botaopesquisasecao.h"
 #include <QMessageBox>
 #include "negocio/bancoddados.h"
 #include <QRegExpValidator>
@@ -36,20 +40,25 @@ Cadastro::~Cadastro()
 
 void Cadastro::configuracaoInicial()
 {
+    setConnects();
+}
+
+void Cadastro::setConnects()
+{
     //texto e botao Filial
-    connect(ui->leFilial, SIGNAL(returnPressed()), this, SLOT(clicouLePesquisarFilial()));
+    //connect(ui->leFilial, SIGNAL(returnPressed()), this, SLOT(clicouLePesquisarFilial()));
     connect(ui->pbFilial, SIGNAL(clicked(bool)), this, SLOT(clicouLePesquisarFilial()));
     //texto e botao Departamento
-    connect(ui->leDepartamento, SIGNAL(returnPressed()), this, SLOT(clicouLePesquisarDepartamento()));
+    //connect(ui->leDepartamento, SIGNAL(returnPressed()), this, SLOT(clicouLePesquisarDepartamento()));
     connect(ui->pbDepartamento, SIGNAL(clicked(bool)), this, SLOT(clicouLePesquisarDepartamento()));
     //texto e botao Secao
-    connect(ui->leSecao, SIGNAL(returnPressed()), this, SLOT(clicouLePesquisarSecao()));
+    //connect(ui->leSecao, SIGNAL(returnPressed()), this, SLOT(clicouLePesquisarSecao()));
     connect(ui->pbSecao, SIGNAL(clicked(bool)), this, SLOT(clicouLePesquisarSecao()));
     //texto e botao Categoria
-    connect(ui->leCategoria, SIGNAL(returnPressed()), this, SLOT(clicouLePesquisarCategoria()));
+    //connect(ui->leCategoria, SIGNAL(returnPressed()), this, SLOT(clicouLePesquisarCategoria()));
     connect(ui->pbCategoria, SIGNAL(clicked(bool)), this, SLOT(clicouLePesquisarCategoria()));
     //texto e botao Produto
-    connect(ui->leProduto, SIGNAL(returnPressed), this, SLOT(clicouLePesquisarProduto()));
+    //connect(ui->leProduto, SIGNAL(returnPressed), this, SLOT(clicouLePesquisarProduto()));
     connect(ui->pbProduto, SIGNAL(clicked(bool)), this, SLOT(clicouLePesquisarProduto()));
     //botao Base
     connect(ui->leBase, SIGNAL(returnPressed), this, SLOT(clicouLePesquisarBase()));
@@ -61,6 +70,8 @@ void Cadastro::configuracaoInicial()
 
 void Cadastro::clicouLePesquisarFilial()
 {
+    botaoPesquisaFilial* pesqFilial = new botaoPesquisaFilial;
+    pesqFilial->show();
 
     qDebug() << "Cara o usuario clicou em Pesquisar Filial";
 }
@@ -70,7 +81,6 @@ void Cadastro::clicouLePesquisarDepartamento()
 }
 void Cadastro::clicouLePesquisarSecao()
 {
-    CadastroBaseNegocio* cadastrobase = new CadastroBaseNegocio;
     qDebug() << "Cara o usuario clicou em Pesquisar Secao";
 }
 void Cadastro::clicouLePesquisarCategoria()
