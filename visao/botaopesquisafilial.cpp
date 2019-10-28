@@ -1,6 +1,6 @@
 #include "botaopesquisafilial.h"
 #include "ui_botaopesquisafilial.h"
-
+#include "qdebug.h"
 #include "negocio/cadastrobasenegocio.h"
 
 botaoPesquisaFilial::botaoPesquisaFilial(QWidget *parent) :
@@ -8,6 +8,8 @@ botaoPesquisaFilial::botaoPesquisaFilial(QWidget *parent) :
     ui(new Ui::botaoPesquisaFilial)
 {
     ui->setupUi(this);
+    configuracoesIniciais();
+    qDebug() << "Chegou no botaoPesquisa Filial";
 }
 
 botaoPesquisaFilial::~botaoPesquisaFilial()
@@ -38,5 +40,5 @@ void botaoPesquisaFilial::montarTWFilial()
 
 void botaoPesquisaFilial::configuracoesIniciais()
 {
-
+    montarTWFilial();
 }
