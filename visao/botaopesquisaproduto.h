@@ -17,6 +17,11 @@ public:
 
 private:
     Ui::botaoPesquisaProduto *ui;
+    
+    void montarTWPrduto();
+
+private slots:
+    void configuracoesIniciais();
 };
 
 #endif // BOTAOPESQUISAPRODUTO_H

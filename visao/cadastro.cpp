@@ -5,6 +5,7 @@
 #include "botaopesquisaproduto.h"
 #include "botaopesquisafilial.h"
 #include "botaopesquisasecao.h"
+#include "botaopesquisadepartamento.h"
 #include <QMessageBox>
 #include "negocio/bancoddados.h"
 #include <QRegExpValidator>
@@ -77,18 +78,26 @@ void Cadastro::clicouLePesquisarFilial()
 }
 void Cadastro::clicouLePesquisarDepartamento()
 {
+    botaoPesquisaDepartamento* pesqDepartamento = new botaoPesquisaDepartamento;
+    pesqDepartamento->show();
     qDebug() << "Cara o usuario clicou em Pesquisar Departamento";
 }
 void Cadastro::clicouLePesquisarSecao()
 {
+    botaoPesquisaSecao* pesqSecao = new botaoPesquisaSecao;
+    pesqSecao->show();
     qDebug() << "Cara o usuario clicou em Pesquisar Secao";
 }
 void Cadastro::clicouLePesquisarCategoria()
 {
+    botaoPesquisaCategoria* pesqCategoria = new botaoPesquisaCategoria;
+    pesqCategoria->show();
     qDebug() << "Cara o usuario clicou em Pesquisar Categoria";
 }
 void Cadastro::clicouLePesquisarProduto()
 {
+    botaoPesquisaProduto* pesqProduto = new botaoPesquisaProduto;
+    pesqProduto->show();
     qDebug() << "Cara o usuario clicou em Pesquisar Produto";
 }
 void Cadastro::clicouLePesquisarBase()

@@ -17,6 +17,11 @@ public:
 
 private:
     Ui::botaoPesquisaCategoria *ui;
+
+    void montarTWCategoria();
+
+private slots:
+    void configuracoesIniciais();
 };
 
 #endif // BOTAOPESQUISACATEGORIA_H

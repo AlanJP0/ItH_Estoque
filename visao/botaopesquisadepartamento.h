@@ -17,6 +17,10 @@ public:
 
 private:
     Ui::botaoPesquisaDepartamento *ui;
+    void montarTWDepartamento();
+
+private slots:
+    void configuracoesIniciais();
 };
 
 #endif // BOTAOPESQUISADEPARTAMENTO_H

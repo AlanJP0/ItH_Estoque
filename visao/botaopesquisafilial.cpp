@@ -24,18 +24,23 @@ void botaoPesquisaFilial::montarTWFilial()
 
     int linha = 0;
     foreach (Filial* filial, listFilial) {
-        ui->tabelaPesquisaFilial->insertRow(linha);
+        ui->tabelaSelecaoFilial->insertRow(linha);
 
         QTableWidgetItem* item0 = new QTableWidgetItem;
         item0->setText(QString::number(filial->getIdFilial()));
-        ui->tabelaPesquisaFilial->setItem(linha, 0 , item0);
+        ui->tabelaSelecaoFilial->setItem(linha, 0 , item0);
 
         QTableWidgetItem* item1 = new QTableWidgetItem;
         item1->setText(filial->getDescricao());
-        ui->tabelaPesquisaFilial->setItem(linha, 1 , item1);
+        ui->tabelaSelecaoFilial->setItem(linha, 1 , item1);
 
         linha ++;
+
+        ui->tabelaSelecaoFilial->resizeColumnsToContents();
+        ui->tabelaSelecaoFilial->resizeRowsToContents();
+
     }
+
 }
 
 void botaoPesquisaFilial::configuracoesIniciais()

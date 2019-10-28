@@ -17,6 +17,11 @@ public:
 
 private:
     Ui::botaoPesquisaSecao *ui;
+
+    void montarTWSecao();
+
+private slots:
+    void configuracoesIniciais();
 };
 
 #endif // BOTAOPESQUISASECAO_H

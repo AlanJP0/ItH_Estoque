@@ -6,13 +6,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>510</width>
+    <width>600</width>
     <height>380</height>
    </rect>
   </property>
   <property name="maximumSize">
    <size>
-    <width>510</width>
+    <width>600</width>
     <height>380</height>
    </size>
   </property>
@@ -37,7 +37,7 @@
     <rect>
      <x>17</x>
      <y>340</y>
-     <width>481</width>
+     <width>561</width>
      <height>20</height>
     </rect>
    </property>
@@ -50,7 +50,7 @@
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>491</width>
+     <width>571</width>
      <height>16</height>
     </rect>
    </property>
@@ -61,9 +61,9 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>80</x>
      <y>60</y>
-     <width>471</width>
+     <width>431</width>
      <height>271</height>
     </rect>
    </property>
@@ -79,20 +79,10 @@
      </widget>
     </item>
     <item row="0" column="1">
-     <spacer name="horizontalSpacer">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
+     <widget class="QTableWidget" name="tabelaSelecaoFilial">
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
       </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>40</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item row="0" column="2">
-     <widget class="QTableWidget" name="tabelaPesquisaFilial">
       <property name="selectionBehavior">
        <enum>QAbstractItemView::SelectRows</enum>
       </property>

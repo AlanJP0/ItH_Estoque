@@ -6,13 +6,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>510</width>
+    <width>600</width>
     <height>380</height>
    </rect>
   </property>
   <property name="maximumSize">
    <size>
-    <width>510</width>
+    <width>600</width>
     <height>380</height>
    </size>
   </property>
@@ -35,7 +35,7 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>70</x>
      <y>70</y>
      <width>451</width>
      <height>261</height>
@@ -53,20 +53,10 @@
      </widget>
     </item>
     <item>
-     <spacer name="horizontalSpacer">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
+     <widget class="QTableWidget" name="tabelaSelecaoDepartamento">
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
       </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>40</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item>
-     <widget class="QTableWidget" name="tabelaSeleacaoDepartamento">
       <column>
        <property name="text">
         <string>ID</string>
@@ -86,7 +76,7 @@
     <rect>
      <x>20</x>
      <y>350</y>
-     <width>471</width>
+     <width>561</width>
      <height>16</height>
     </rect>
    </property>
@@ -99,7 +89,7 @@
     <rect>
      <x>30</x>
      <y>20</y>
-     <width>461</width>
+     <width>541</width>
      <height>16</height>
     </rect>
    </property>

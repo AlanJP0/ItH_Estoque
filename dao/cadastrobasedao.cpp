@@ -32,7 +32,7 @@ QList<Categoria*> CadastroBaseDao::buscarListCategoria()
 
 QList<Departamento*> CadastroBaseDao::buscarListDepartamento()
 {
-    QString sql = " select estoque.testeestoque.departamento.id_departamento, estoque.testeestoque.departamento.descrica_departamento from estoque.testeestoque.departamento" ;
+    QString sql = " select estoque.testeestoque.departamento.id_departamento, estoque.testeestoque.departamento.descricao_departamento from estoque.testeestoque.departamento" ;
 
     QSqlQuery query;
     query.prepare(sql);
@@ -78,7 +78,7 @@ QList<Filial*> CadastroBaseDao::buscarListFilial()
 
 QList<Produto*> CadastroBaseDao::buscarListProduto()
 {
-    QString sql = " select estoque.testeestoque.produto.id_produto, estoque.testeestoque.produto.descrica_produto from estoque.testeestoque.produto ";
+    QString sql = " select estoque.testeestoque.produto.id_produto, estoque.testeestoque.produto.descricao_produto from estoque.testeestoque.produto ";
 
     QSqlQuery query;
     query.prepare(sql);
@@ -103,7 +103,8 @@ QList<Produto*> CadastroBaseDao::buscarListProduto()
 
 QList<Secao*> CadastroBaseDao::buscarListSecao()
 {
-    QString sql = " select estoque.testeestoque.secao.id_secao, estoque.testeestoque.secao.descrica_secao from estoque.testeestoque.secao ";
+    qDebug() << "Chegou em buscarListSecao";
+    QString sql = " select estoque.testeestoque.secao.id_secao, estoque.testeestoque.secao.descricao_secao from estoque.testeestoque.secao ";
 
     QSqlQuery query;
     query.prepare(sql);
