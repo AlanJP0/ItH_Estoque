@@ -8,6 +8,7 @@ botaoPesquisaFilial::botaoPesquisaFilial(QWidget *parent) :
     ui(new Ui::botaoPesquisaFilial)
 {
     ui->setupUi(this);
+    configuracoesIniciais();
 }
 
 botaoPesquisaFilial::~botaoPesquisaFilial()
@@ -38,5 +39,5 @@ void botaoPesquisaFilial::montarTWFilial()
 
 void botaoPesquisaFilial::configuracoesIniciais()
 {
-
+    montarTWFilial();
 }

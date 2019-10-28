@@ -70,7 +70,7 @@ void Cadastro::setConnects()
 
 void Cadastro::clicouLePesquisarFilial()
 {
-    botaoPesquisaFilial* pesqFilial = new botaoPesquisaFilial;
+   botaoPesquisaFilial* pesqFilial = new botaoPesquisaFilial;
     pesqFilial->show();
 
     qDebug() << "Cara o usuario clicou em Pesquisar Filial";

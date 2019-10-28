@@ -17,6 +17,12 @@ public:
 
 private:
     Ui::botaoPesquisaFilial *ui;
+
+    void montarTWFilial();
+
+private slots:
+    void configuracoesIniciais();
+
 };
 
 #endif // BOTAOPESQUISAFILIAL_H
