@@ -46,3 +46,8 @@ void botaoPesquisaCategoria::configuracoesIniciais()
 {
     montarTWCategoria();
 }
+
+void botaoPesquisaCategoria::clicouEmFilial(QTableWidgetItem *item)
+{
+
+}

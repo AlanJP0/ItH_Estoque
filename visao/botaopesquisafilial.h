@@ -2,6 +2,7 @@
 #define BOTAOPESQUISAFILIAL_H
 
 #include <QDialog>
+#include <QTableWidgetItem>
 
 namespace Ui {
 class botaoPesquisaFilial;
@@ -14,14 +15,18 @@ class botaoPesquisaFilial : public QDialog
 public:
     explicit botaoPesquisaFilial(QWidget *parent = nullptr);
     ~botaoPesquisaFilial();
+    void setConects();
+    QString getId();
 
 private:
     Ui::botaoPesquisaFilial *ui;
-
     void montarTWFilial();
+
+    QString idFilial;
 
 private slots:
     void configuracoesIniciais();
+    void clicouEmFilial(QTableWidgetItem* item);
 
 };
 

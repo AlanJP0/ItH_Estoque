@@ -6,6 +6,7 @@
 #include "botaopesquisafilial.h"
 #include "botaopesquisasecao.h"
 #include "botaopesquisadepartamento.h"
+#include <QDialog>
 #include <QMessageBox>
 #include "negocio/bancoddados.h"
 #include <QRegExpValidator>
@@ -71,10 +72,17 @@ void Cadastro::setConnects()
 
 void Cadastro::clicouLePesquisarFilial()
 {
-   botaoPesquisaFilial* pesqFilial = new botaoPesquisaFilial;
-    pesqFilial->show();
+    QString id;
+//    CadastroBaseNegocio* listaFilial = new CadastroBaseNegocio;
 
-    qDebug() << "Cara o usuario clicou em Pesquisar Filial";
+    botaoPesquisaFilial* btFilial = new botaoPesquisaFilial;
+
+    if(btFilial->exec() == QDialog::Accepted)
+    {
+        id = btFilial->getId();
+       // QString descFilial = listaFilial;
+        ui->leFilial->setText(id);
+    }
 }
 void Cadastro::clicouLePesquisarDepartamento()
 {

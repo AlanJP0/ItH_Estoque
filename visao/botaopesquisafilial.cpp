@@ -17,6 +17,16 @@ botaoPesquisaFilial::~botaoPesquisaFilial()
     delete ui;
 }
 
+void botaoPesquisaFilial::setConects()
+{
+    connect(ui->tabelaSelecaoFilial, SIGNAL(itemDoubleClicked(QTableWidgetItem*)), this, SLOT(clicouEmFilial(QTableWidgetItem*)));
+}
+
+QString botaoPesquisaFilial::getId()
+{
+    return idFilial;
+}
+
 void botaoPesquisaFilial::montarTWFilial()
 {
     CadastroBaseNegocio cadastrobase;
@@ -34,6 +44,8 @@ void botaoPesquisaFilial::montarTWFilial()
         item1->setText(filial->getDescricao());
         ui->tabelaSelecaoFilial->setItem(linha, 1 , item1);
 
+        item0->setData(QTableWidgetItem::UserType,QVariant(QMetaType::QObjectStar, &filial));
+
         linha ++;
 
         ui->tabelaSelecaoFilial->resizeColumnsToContents();
@@ -46,4 +58,31 @@ void botaoPesquisaFilial::montarTWFilial()
 void botaoPesquisaFilial::configuracoesIniciais()
 {
     montarTWFilial();
+    setConects();
+}
+
+void botaoPesquisaFilial::clicouEmFilial(QTableWidgetItem *item)
+{
+    if(item == nullptr)
+        return;
+
+    QTableWidgetItem * itemId = ui->tabelaSelecaoFilial->item(item->row(),0);
+
+    if(itemId == nullptr)
+        return;
+
+    idFilial = itemId->text();
+
+    CadastroBaseNegocio* listaFilial;
+
+    QVariant value = item->data(QTableWidgetItem::UserType);
+
+    if(!value.isNull()){
+        listaFilial = qobject_cast <CadastroBaseNegocio*>(qvariant_cast<QObject*>(value));
+        if(listaFilial != nullptr)
+            qDebug() << "Diz que sabe";
+
+    }
+
+    this->accept();
 }
